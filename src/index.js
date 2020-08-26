@@ -4,13 +4,15 @@ import format from 'date-fns/format'
 
 window.addEventListener('load', () => {
   const root = document.getElementById('ACHG')
-  const observer = new MutationObserver(() =>{
+  const observer = new MutationObserver(() => {
     for (const el of document.getElementsByClassName('content')) {
       const times = []
       for (const e of el.querySelectorAll('.punchContent')) {
         const kbn = e.querySelector('.punchKbn')
         if (kbn) {
-          times.push(parse(e.textContent.match(/\d\d:\d\d/)[0], 'HH:mm', new Date()))
+          times.push(
+            parse(e.textContent.match(/\d\d:\d\d/)[0], 'HH:mm', new Date()),
+          )
         }
       }
       if (times.length % 2) {
@@ -28,6 +30,6 @@ window.addEventListener('load', () => {
   })
   observer.observe(root, {
     childList: true,
-    characterData: true
+    characterData: true,
   })
 })
