@@ -1,7 +1,10 @@
 {
   "mount": {
     "public": "/",
-    "src": "/_dist_"
+    "src": "/dist"
   },
-  "plugins": []
+  "plugins": [],
+  "buildOptions": {
+    "metaDir": "snowpack"
+  }
 }

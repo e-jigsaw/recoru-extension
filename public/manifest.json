@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+  "name": "recoru-extension",
+  "description": "",
+  "version": "0.0.1",
+  "author": "Takaya Kobayashi (https://kbys.tk/y)",
+  "permissions": [],
+  "content_scripts": [
+    {
+      "matches": ["https://app.recoru.in/ap/home/"],
+      "js": ["dist/inject.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    "dist/*",
+    "web_modules/*"
+  ]
+}
